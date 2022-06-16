@@ -1,0 +1,19 @@
+@import "./variables";
+@import "./mixins";
+@import "./index";
+@import "./contacto";
+
+
+.flexcentrar {
+    @include flexCentrado
+}
+.centrarTodo {
+    @extend .flexcentrar;
+    
+    & * {
+        @extend .flexcentrar;
+    }
+}
+header {
+    background: $heroLink;
+}

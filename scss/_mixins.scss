@@ -1,0 +1,20 @@
+@mixin flexCentrado($direccion: fila) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @if $direccion == columna {
+        flex-direction: column;
+    }
+    @else if $direccion == columnaInv{
+        flex-direction: column-reverse;
+    }
+    @else if $direccion == filaInv{
+        flex-direction: row-reverse;
+    }
+    @else if $direccion == fila{
+        flex-direction: row;
+    }
+    @else {
+        @error "Debes meter o fila, filaInv, columna o columnaInv como argumento de este mixin"
+    }
+}
