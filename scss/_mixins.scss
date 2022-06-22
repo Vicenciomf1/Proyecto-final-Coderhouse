@@ -22,7 +22,7 @@
 
 @include media-breakpoint-up(xl) {
     hr {
-        display: block; /* Queda pisado por bootstrap con sus !important, en vez de usarlo yo, que sería mala práctica, purgaré al CSS como dijo Ayelén primero */
+        display: block !important; /* Queda pisado por bootstrap con sus !important, en vez de usarlo yo, que sería mala práctica, purgaré al CSS como dijo Ayelén primero */
         width: 20%;
         margin: auto;
     }
