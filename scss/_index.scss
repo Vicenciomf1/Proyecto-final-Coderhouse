@@ -3,7 +3,7 @@ main {
         margin: $margenGrande;
     }
     & > :nth-child(even){
-        background-color: map-get($colores, grisFondo);
+        background-color: map-get($colors, "grisFondo");
     }
 }
 header {
@@ -11,7 +11,7 @@ header {
 }
 .hero__texto--titulo {
     font-size: 3rem;
-    color: map-get($colores, blanco);
+    color: map-get($colors, "white");  /* Saco un color de un mapa de Bootstrap */
 }
 .logo {
     width: 70%;

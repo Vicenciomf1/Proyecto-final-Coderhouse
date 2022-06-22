@@ -12,7 +12,7 @@
 }
 
 .bg-mio {
-    background-color: map-get($colores, grisFondo);
+    background-color: map-get($colors, "grisFondo");
 }
 
 .inputAnimado {
@@ -43,15 +43,3 @@ label {
     align-items: center;
     transition: transform .25s, opacity .25s;
 }
-
-/* PC  */
-@media only screen and (min-width:1401px){
-
-    hr {
-        display: block;
-        width: 20%;
-        margin: auto;
-    }
-
-}
-

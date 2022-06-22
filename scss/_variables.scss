@@ -1,6 +1,6 @@
 $margenGrande: 15vh 0vw;
 $heroLink: url("../../assets/img/fondoHero.webp");
-$colores: (
-    blanco: white,
-    grisFondo: #6980A22B
+$gris: #6980A22B;
+$nuevos_colores: (
+    "grisFondo": $gris  /* Este es el gris que uso en el fondo, por buena práctica intento mantener la sintaxis que usa Bootstrap para cuando les haga merge a los mapas */
 );
