@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/*
-Hacer un if breakpoint lg: 
-    $card-height: 30vh;
-else
-    null
-*/
 /*!
  * Bootstrap v5.2.0-beta1 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -904,7 +898,7 @@ progress {
   .col-md-3 {
     flex: 0 0 auto;
     width: 25%; }
-  .col-md-4, .tarjeta {
+  .col-md-4 {
     flex: 0 0 auto;
     width: 33.33333%; }
   .col-md-5 {
@@ -8761,4 +8755,5 @@ header {
 
 @media (min-width: 992px) {
   .tarjetaWrapper {
-    padding: 1.5rem; } }
+    padding: 1.6rem;
+    /*Pude usar p-lg-4, pero necesitaba un poco más de tamaño, y no usaría tanto el 1.6rem para añadirlo como spacer dentro del mapa de Bootstrap*/ } }

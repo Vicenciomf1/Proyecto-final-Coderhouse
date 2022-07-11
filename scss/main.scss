@@ -29,6 +29,6 @@ header {
 
 @include media-breakpoint-up(lg) {
     .tarjetaWrapper {
-        padding: 1.5rem;
+        padding: 1.6rem;  /*Pude usar p-lg-4, pero necesitaba un poco más de tamaño, y no usaría tanto el 1.6rem para añadirlo como spacer dentro del mapa de Bootstrap*/
     }
 };
