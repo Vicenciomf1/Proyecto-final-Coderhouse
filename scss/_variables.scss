@@ -4,3 +4,7 @@ $gris: #6980A22B;
 $nuevos_colores: (
     "grisFondo": $gris  /* Este es el gris que uso en el fondo, por buena práctica intento mantener la sintaxis que usa Bootstrap para cuando les haga merge a los mapas */
 );
+$spacer: 1rem;
+$nuevos_box_model: (
+    6: $spacer * 3.5,
+);
