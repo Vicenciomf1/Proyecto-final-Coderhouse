@@ -22,3 +22,13 @@ $spacers: map-merge($nuevos_box_model, $spacers);
 header {
     background: $heroLink;
 }
+
+.tarjetaWrapper {
+    @extend .col-md-6, .col-lg-4, .p-2, .my-3;
+}
+
+@include media-breakpoint-up(lg) {
+    .tarjetaWrapper {
+        padding: 1.5rem;
+    }
+};
