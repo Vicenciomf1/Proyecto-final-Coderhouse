@@ -1,4 +1,9 @@
-@charset "UTF-8";
+@charset "UTF-8";  /* Este es el CSS que compila mi SASS, por tal razón es que no lo he borrado, pero tampoco lo incluyo en el server */
+/*
+$nuevos_position: (
+
+);
+*/
 /*!
  * Bootstrap v5.2.0-beta1 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -287,7 +292,7 @@ iframe {
   .container {
     max-width: 1320px; } }
 
-.row {
+.row, .hero {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
@@ -295,7 +300,7 @@ iframe {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-.5 * var(--bs-gutter-x));
   margin-left: calc(-.5 * var(--bs-gutter-x)); }
-  .row > * {
+  .row > *, .hero > * {
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
@@ -306,6 +311,11 @@ iframe {
 .col {
   flex: 1 0 0%; }
 
+@media (min-width: 520px) {
+   .hero__texto, .hero__imagen--contenedor {
+    flex: 0 0 auto;
+    width: 50%; } }
+
 @media (min-width: 768px) {
   .col-md-2 {
     flex: 0 0 auto;
@@ -315,7 +325,10 @@ iframe {
     width: 25%; }
   .col-md-4 {
     flex: 0 0 auto;
-    width: 33.33333%; } }
+    width: 33.33333%; }
+   .tarjetaWrapper {
+    flex: 0 0 auto;
+    width: 50%; } }
 
 @media (min-width: 992px) {
   .col-lg-2 {
@@ -324,7 +337,7 @@ iframe {
   .col-lg-3 {
     flex: 0 0 auto;
     width: 25%; }
-  .col-lg-4 {
+  .col-lg-4, .tarjetaWrapper {
     flex: 0 0 auto;
     width: 33.33333%; }
   .col-lg-6 {
@@ -500,6 +513,12 @@ textarea.form-control {
   --bs-btn-disabled-color: #0d6efd;
   --bs-btn-disabled-bg: transparent;
   --bs-gradient: none; }
+
+.btn-lg {
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-font-size: 1.25rem;
+  --bs-btn-border-radius: 0.5rem; }
 
 .collapse:not(.show) {
   display: none; }
@@ -757,7 +776,7 @@ textarea.form-control {
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
   --bs-card-cap-color: ;
-  --bs-card-height: ;
+  --bs-card-height: 105%;
   --bs-card-color: ;
   --bs-card-bg: #fff;
   --bs-card-img-overlay-padding: 1rem;
@@ -985,9 +1004,6 @@ textarea.form-control {
 .border-bottom {
   border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; }
 
-.flex-column {
-  flex-direction: column !important; }
-
 .justify-content-center {
   justify-content: center !important; }
 
@@ -997,9 +1013,16 @@ textarea.form-control {
 .m-0 {
   margin: 0 !important; }
 
+.m-auto {
+  margin: auto !important; }
+
 .mx-auto {
   margin-right: auto !important;
   margin-left: auto !important; }
+
+.my-3, .tarjetaWrapper {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important; }
 
 .mt-1 {
   margin-top: 0.25rem !important; }
@@ -1019,9 +1042,6 @@ textarea.form-control {
 .me-5 {
   margin-right: 3rem !important; }
 
-.me-auto {
-  margin-right: auto !important; }
-
 .mb-0 {
   margin-bottom: 0 !important; }
 
@@ -1034,14 +1054,38 @@ textarea.form-control {
 .mb-4 {
   margin-bottom: 1.5rem !important; }
 
-.p-4 {
+.ms-auto {
+  margin-left: auto !important; }
+
+ .tarjetaWrapper {
+  padding: 0.5rem !important; }
+
+.p-4, .hero {
   padding: 1.5rem !important; }
 
 .p-5 {
   padding: 3rem !important; }
 
+.px-5 {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important; }
+
+.py-3 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important; }
+
+.py-4 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important; }
+
 .pt-5 {
   padding-top: 3rem !important; }
+
+ .hero__texto--titulo {
+  font-size: calc(1.375rem + 1.5vw) !important; }
+
+ .hero__texto--subtitulo {
+  font-size: calc(1.325rem + 0.9vw) !important; }
 
 .fs-4 {
   font-size: calc(1.275rem + 0.3vw) !important; }
@@ -1052,7 +1096,7 @@ textarea.form-control {
 .fw-bold {
   font-weight: 700 !important; }
 
-.text-center {
+.text-center, .hero__texto--titulo, .hero__texto--subtitulo {
   text-align: center !important; }
 
 .text-uppercase {
@@ -1074,12 +1118,17 @@ textarea.form-control {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important; }
 
-.rounded {
-  border-radius: var(--bs-border-radius) !important; }
+@media (min-width: 576px) {
+  .p-sm-0 {
+    padding: 0 !important; } }
 
 @media (min-width: 768px) {
   .mb-md-0 {
     margin-bottom: 0 !important; }
+  .p-md-2 {
+    padding: 0.5rem !important; }
+  .p-md-3 {
+    padding: 1rem !important; }
   .text-md-start {
     text-align: left !important; } }
 
@@ -1090,13 +1139,27 @@ textarea.form-control {
     justify-content: space-between !important; }
   .mb-lg-0 {
     margin-bottom: 0 !important; }
+  .p-lg-6 {
+    padding: 3.5rem !important; }
+  .p-lg-4 {
+    padding: 1.5rem !important; }
+  .p-lg-5 {
+    padding: 3rem !important; }
+  .px-lg-5 {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important; }
   .text-lg-start {
     text-align: left !important; } }
 
 @media (min-width: 1200px) {
+   .hero__texto--titulo {
+    font-size: 2.5rem !important; }
+   .hero__texto--subtitulo {
+    font-size: 2rem !important; }
   .fs-4 {
     font-size: 1.5rem !important; } }
 
+/*Media queries en la landing page index*/
 @media (min-width: 1200px) {
   hr {
     display: block !important;
@@ -1104,19 +1167,25 @@ textarea.form-control {
     width: 20%;
     margin: auto; } }
 
-main > * {
-  margin: 15vh 0vw; }
+@media (min-width: 992px) {
+  .tarjetaWrapper {
+    padding: 1.6rem;
+    /*Pude extender con .p-lg-4 en el .tarjetawrapper original, pero necesitaba un poco más de tamaño, y no usaría tanto el 1.6rem para añadirlo como spacer dentro del mapa de Bootstrap*/ } }
 
-main > :nth-child(even) {
-  background-color: #6980A22B; }
+@media (max-width: 991.98px) {
+  /*Este media query es para abajo (max-width), porque prefiero el width que deja bootstrap desde lg hacia arriba, para así no tocarlo*/
+  .navbar-brand {
+    width: 75%; } }
+
+main {
+  overflow: hidden; }
+  main > * {
+    margin: 15vh 0vw; }
+  main > :nth-child(even) {
+    background-color: #6980A22B; }
 
 header {
   background: url("../assets/img/fondoHero.jpg"); }
-
-.hero__texto--titulo {
-  font-size: 3rem;
-  color: #fff;
-  /* Saco un color de un mapa de Bootstrap */ }
 
 .logo {
   width: 70%; }
@@ -1127,6 +1196,19 @@ hr {
 
 .nav-link:hover + hr {
   width: 85%; }
+
+.hero__texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .hero__texto--titulo {
+    /* Si usara más de estos títulos, pero en vez de h1 y h2, hasta h6, se podría hacer un bucle for desde 1 a 6, ya que repito el mixin del hero-texto, y el iterador podría meterse dentro del "@extend .fs-n" */
+    color: #fff;
+    /* Saco un color de un mapa de Bootstrap */ }
+  .hero__texto--subtitulo {
+    color: #fff;
+    /* Saco un color de un mapa de Bootstrap */ }
 
 .img-pesadote {
   width: 2.5rem; }
