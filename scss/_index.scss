@@ -1,4 +1,5 @@
 main {
+    overflow: hidden;
     &>* {
         margin: $margenGrande;
     }
@@ -9,10 +10,7 @@ main {
 header {
     background: url("../assets/img/fondoHero.jpg");
 }
-.hero__texto--titulo {
-    font-size: 3rem;
-    color: map-get($colors, "white");  /* Saco un color de un mapa de Bootstrap */
-}
+
 .logo {
     width: 70%;
 }
@@ -22,4 +20,23 @@ hr {
 }
 .nav-link:hover+hr{
     width: 85%;
+}
+
+.hero{
+    @extend .row, .p-4;
+    &__texto{
+        @extend .col-mini-6;
+        @include flexCentrado(columna);
+        &--titulo{  /* Si usara más de estos títulos, pero en vez de h1 y h2, hasta h6, se podría hacer un bucle for desde 1 a 6, ya que repito el mixin del hero-texto, y el iterador podría meterse dentro del "@extend .fs-n" */
+            @extend .fs-1;
+            @include hero-texto();
+        }
+        &--subtitulo{
+            @extend .fs-2;
+            @include hero-texto();
+        }
+    }
+    &__imagen--contenedor{
+        @extend .col-mini-6
+    }
 }
