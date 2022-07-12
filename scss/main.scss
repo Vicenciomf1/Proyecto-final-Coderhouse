@@ -4,6 +4,15 @@
 $theme-colors: map-merge($nuevos_colores, $theme-colors);
 $colors: map-merge($nuevos_colores, $colors);
 $spacers: map-merge($nuevos_box_model, $spacers);
+$grid-breakpoints: (  /* No usé la misma manera anterior, porque Bootstrap pedía meter los nuevos breakpoints entre medio, y busqué, leí, vi videos, y no sé mucho de programación como para meter entre medio el valor o mapa con algún bucle :(, así que busqué el valor y lo pegué, como está en !default el de Bootstrap, no habría problema */
+    xs: 0,
+    mini: 520px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./mixins";
 @import "./index";
@@ -26,9 +35,3 @@ header {
 .tarjetaWrapper {
     @extend .col-md-6, .col-lg-4, .p-2, .my-3;
 }
-
-@include media-breakpoint-up(lg) {
-    .tarjetaWrapper {
-        padding: 1.6rem;  /*Pude usar p-lg-4, pero necesitaba un poco más de tamaño, y no usaría tanto el 1.6rem para añadirlo como spacer dentro del mapa de Bootstrap*/
-    }
-};

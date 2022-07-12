@@ -15,7 +15,7 @@
     <!-- En esta parte va el header, con su título y su barra de navegación. -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid d-flex flex-nowrap">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="index.html"><img class="logo" src="./assets/img/logo.webp" alt="Logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -47,12 +47,14 @@
             </div>
         </nav>
         <!-- Acá va el hero -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-6 d-flex flex-column justify-content-center">
-                    <h1 class="hero__texto--titulo text-center">Websupport <br> Servicios <br> Tecnológicos</h1>
+        <div class="container-fluid my-3 py-4">
+            <div class="hero">
+                <div class="hero__texto">
+                    <h1 class="hero__texto--titulo">Websupport</h1>
+                    <h2 class="hero__texto--subtitulo">Servicios</h2>
+                    <h2 class="hero__texto--subtitulo">Tecnológicos</h2>
                 </div>
-                <div class="col-xl-6">
+                <div class="hero__imagen--contenedor"> <!-- Tomé a este bloque como modificador, porque el bloque es el hero, y el elemento la imagen, este modifica a esa imagen al limitar su tamaño, aunque no sé si siga el principio de nesting, pero sería hilar muy fino, es lo que me alcanzó con leer la documentación:( -->
                     <img class="img-fluid" src="./assets/img/hero.webp" alt="Imagen de Servicio Técnico">
                 </div>
             </div>

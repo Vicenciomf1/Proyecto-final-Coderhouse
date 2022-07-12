@@ -19,7 +19,12 @@
         @error "Debes meter o fila, filaInv, columna o columnaInv como argumento de este mixin"
     }
 };
+@mixin hero-texto() {
+    color: map-get($colors, "white");  /* Saco un color de un mapa de Bootstrap */
+    @extend .text-center;
+}
 
+/*Media queries en la landing page index*/
 @include media-breakpoint-up(xl) {
     hr {
         display: block !important; /* Queda pisado por bootstrap con sus !important, en vez de usarlo yo, que sería mala práctica, purgaré al CSS como dijo Ayelén primero */
@@ -27,3 +32,18 @@
         margin: auto;
     }
 };
+@include media-breakpoint-up(lg) {
+    .tarjetaWrapper {
+        padding: 1.6rem;  /*Pude extender con .p-lg-4 en el .tarjetawrapper original, pero necesitaba un poco más de tamaño, y no usaría tanto el 1.6rem para añadirlo como spacer dentro del mapa de Bootstrap*/
+    }
+};
+@include media-breakpoint-down(lg){  /*Este media query es para abajo (max-width), porque prefiero el width que deja bootstrap desde lg hacia arriba, para así no tocarlo*/
+    .navbar-brand{
+        width: 75%;
+    }
+};
+// @include media-breakpoint-between(mini, lg) {
+//     .hero__imagen{
+//         width: 80% !important;
+//     }
+// }
